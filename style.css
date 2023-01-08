@@ -2,32 +2,54 @@
     margin: 0;
     padding: 0;
 }
-
-
 .global-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+
+.header {
+    background-color: rgb(199, 177, 177);
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+}
+.title {
+    font-family: 'Merriweather', serif;
+    font-size: 70px;
+    color: rgb(63, 61, 58);
+}
+
+
+
 .grid-container {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    border: solid black 5px;
+    margin-top: 50px;
+    background-color: rgb(255, 255, 255);
 }
 .grid-row {
     display: flex;
 }
 .grid-pixel {
-    background-color: rgb(164, 161, 167);
-    border: solid rgb(201, 110, 103) 1px;   
+    background-color: rgb(255, 255, 255);
+    border: solid rgb(236, 236, 236) 1px;
+    border-radius: 2px; 
 }
 .active {
-    background-color: rgb(238, 185, 70);
+    background-color: rgb(131, 128, 122);
 }
 .menu {
     display: flex;
     gap: 25px;
+    border: solid rgb(131, 128, 122) 4px;
+    padding: 8px;
+    border-radius: 15px;
+}
+.menuTitle {
+    font-family: 'Merriweather', serif;
 }
 .slide-container {
     display: flex;
@@ -37,7 +59,10 @@
     align-items: center;
     gap: 10px;
 }
-
+.slider {
+    background-color: rgb(199, 177, 177);
+    color: rgb(199, 177, 177);
+}
 .slide-btn {
     width : 50px;
 }
