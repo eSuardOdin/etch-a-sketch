@@ -11,14 +11,20 @@
 }
 .grid-container {
     display: flex;
-    border: black solid 2px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 20px;
+    border: solid black 5px;
 }
-
+.grid-row {
+    display: flex;
+}
 .grid-pixel {
-    background-color: aqua;
+    background-color: rgb(164, 161, 167);
+    border: solid rgb(201, 110, 103) 1px;   
 }
-
+.active {
+    background-color: rgb(238, 185, 70);
+}
 .menu {
     display: flex;
     gap: 25px;

@@ -4,27 +4,34 @@ const slideBtn = document.querySelector('.slide-btn');
 const sizeText = document.querySelector('.size-text');
 const grid = document.querySelector('.grid-container');
 
-const getGridSize = () => {
+const resizeGrid = () => {
     console.log(slide.value);
 }
 const refreshSizeText = () => {
     sizeText.textContent = `${slide.value} X ${slide.value}`;
 }
 
-const createGrid = (size) => {
+const hoverPixel = (pix) => {
+    pix.classList.add('active');
+}
 
-    for(let y = 0; y < size; y++){
-        for(let i = 0; i < size; i++) {
+const createGrid = (size) => {
+    grid.innerText = '';
+    for(let y = 0; y < size; y++){ // Create a column
+        let col = document.createElement('div');
+        col.classList.toggle('grid-row');
+        for(let i = 0; i < size; i++) { // Create a pixel
             let pix = document.createElement('div');
             pix.classList.toggle('grid-pixel');
-            pix.setAttribute('style', `width: ${500/size}px; height: ${(500/ size)}px;`);
-            pix.innerText = `${i+1}`;
-            grid.appendChild(pix);
+            pix.setAttribute('style', `width: ${800/size}px; height: ${(800/ size)}px;`);
+            pix.addEventListener('mouseenter', () => hoverPixel(pix));
+            col.appendChild(pix);
         }
+        grid.appendChild(col)
     }
 
 }
-slideBtn.addEventListener('click', getGridSize);
+slideBtn.addEventListener('click', () => createGrid(slide.value));
 
 
 refreshSizeText();
